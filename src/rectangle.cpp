@@ -10,7 +10,11 @@ Rectangle::Rectangle(unsigned int w, unsigned int h) {
     this->area = w * h;
     this->offset_x = 0;
     this->offset_y = 0;
-    this->original = true;
+    this->rotated = false;
+}
+
+unsigned int Rectangle::getArea() const {
+    return this->area;
 }
 
 unsigned int Rectangle::getWidth() const {
@@ -29,13 +33,21 @@ unsigned int Rectangle::getOffsetY() const {
     return this->offset_y;
 }
 
+bool Rectangle::isRotated() const {
+    return this->rotated;
+}
+
 void Rectangle::rotate() {
-    this->original = !this->original;
+    this->rotated = !this->rotated;
     this->width = this->width ^ this->height;
     this->height = this->width ^ this->height;
     this->width = this->width ^ this->height;
 }
 
-bool Rectangle::isRotated() const {
-    return this->original;
+void Rectangle::setOffsetX(unsigned int ox) {
+    this->offset_x = ox;
+}
+
+void Rectangle::setOffsetY(unsigned int oy) {
+    this->offset_y = oy;
 }

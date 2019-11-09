@@ -8,5 +8,7 @@ run: main.cpp
 	$(CC) -o main main.cpp $(SRC) $(CFLAGS_COMMON) $(CFLAGS)
 test:
 	$(CC) -o test tests/*.cpp $(SRC) $(CFLAGS_TEST) $(CFLAGS_COMMON)
-clean:
+clean_main:
 	rm main
+clean_test:
+	rm test

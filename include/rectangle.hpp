@@ -12,16 +12,17 @@ private:
     unsigned int area;
     unsigned int offset_x;
     unsigned int offset_y;
-    bool original;
+    bool rotated;
 public:
     Rectangle(unsigned int, unsigned int);
     unsigned int getWidth() const;
     unsigned int getHeight() const;
     unsigned int getOffsetX() const;
     unsigned int getOffsetY() const;
+    unsigned int getArea() const;
+    void rotate();
     void setOffsetX(unsigned int);
     void setOffsetY(unsigned int);
-    void rotate();
     bool isRotated() const;
 };
 
