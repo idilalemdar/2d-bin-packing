@@ -10,10 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cb54de7-0d8d-4c43-abfa-2063759dd4a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/bbox.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bbox.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_bbox.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/rectangle.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/rectangle.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rectangle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/rectangle.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test" beforeDir="false" afterPath="$PROJECT_DIR$/test" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_rectangle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_rectangle.cpp" afterDir="false" />
@@ -50,12 +50,12 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/include" />
       <recent name="$PROJECT_DIR$/src" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -82,7 +82,9 @@
       <updated>1572188079171</updated>
       <workItem from="1572188080312" duration="4638000" />
       <workItem from="1573237102197" duration="6979000" />
-      <workItem from="1573312729138" duration="1480000" />
+      <workItem from="1573312729138" duration="2723000" />
+      <workItem from="1573406257224" duration="4015000" />
+      <workItem from="1573642825644" duration="9657000" />
     </task>
     <servers />
   </component>

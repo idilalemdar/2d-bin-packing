@@ -38,10 +38,12 @@ bool Rectangle::isRotated() const {
 }
 
 void Rectangle::rotate() {
-    this->rotated = !this->rotated;
-    this->width = this->width ^ this->height;
-    this->height = this->width ^ this->height;
-    this->width = this->width ^ this->height;
+    if(this->width != this->height) {  // Operation is not valid for squares
+        this->rotated = !this->rotated;
+        this->width = this->width ^ this->height;
+        this->height = this->width ^ this->height;
+        this->width = this->width ^ this->height;
+    }
 }
 
 void Rectangle::setOffsetX(unsigned int ox) {

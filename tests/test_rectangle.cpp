@@ -12,7 +12,7 @@ TEST(RectangleTest, Constructor) {
     EXPECT_EQ(r1.getArea(), 12);
     EXPECT_EQ(r1.getOffsetX(), 0);
     EXPECT_EQ(r1.getOffsetY(), 0);
-    EXPECT_EQ(r1.isRotated(), false);
+    ASSERT_FALSE(r1.isRotated());
 }
 
 TEST(RectangleTest, Rotate) {
@@ -21,7 +21,7 @@ TEST(RectangleTest, Rotate) {
     EXPECT_EQ(r1.getWidth(), 4);
     EXPECT_EQ(r1.getHeight(), 3);
     EXPECT_EQ(r1.getArea(), 12);
-    EXPECT_EQ(r1.isRotated(), true);
+    ASSERT_TRUE(r1.isRotated());
 }
 
 TEST(RectangleTest, RotateTwice) {
@@ -31,7 +31,7 @@ TEST(RectangleTest, RotateTwice) {
     EXPECT_EQ(r1.getWidth(), 3);
     EXPECT_EQ(r1.getHeight(), 4);
     EXPECT_EQ(r1.getArea(), 12);
-    EXPECT_EQ(r1.isRotated(), false);
+    ASSERT_FALSE(r1.isRotated());
 }
 
 TEST(RectangleTest, SetOffsets) {
@@ -40,4 +40,25 @@ TEST(RectangleTest, SetOffsets) {
     r1.setOffsetY(7);
     EXPECT_EQ(r1.getOffsetX(), 5);
     EXPECT_EQ(r1.getOffsetY(), 7);
+}
+
+TEST(RectangleTest, RotateSquare) {
+    Rectangle r(4,4);
+    r.rotate();
+    ASSERT_FALSE(r.isRotated());
+}
+
+TEST(RectangleTest, Commutativity) {
+    Rectangle r1(8,2);
+    r1.rotate();
+    r1.setOffsetX(2);
+    r1.setOffsetY(4);
+
+    Rectangle r2(8,2);
+    r2.setOffsetX(2);
+    r2.setOffsetY(4);
+    r2.rotate();
+
+    EXPECT_EQ(r1.getWidth(), r2.getWidth());
+    EXPECT_EQ(r1.getHeight(), r2.getHeight());
 }
