@@ -14,18 +14,15 @@ using namespace std;
 
 class BoundingBox {
 public:
-    BoundingBox(vector<Rectangle>);
-    unsigned int getPenalty() const;
+    BoundingBox(vector<Rectangle>, unsigned int);
     unsigned int getTargetArea() const;
     unsigned int getCurrentArea() const;
     unsigned int getFitness() const;
-    void setPenalty(unsigned int);
     void calculateDimensions();
-    void calculateFitness();
+    void calculateFitness(unsigned int);
 private:
     vector<Rectangle> rectangles;
-    unsigned int target_area;
-    unsigned int penalty;
+    unsigned int targetArea;
     unsigned int width;
     unsigned int height;
     unsigned int fitness;

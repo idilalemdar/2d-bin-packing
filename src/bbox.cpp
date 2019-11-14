@@ -4,22 +4,13 @@
 
 #include "bbox.hpp"
 
-BoundingBox::BoundingBox(vector<Rectangle> recs) {
-    this->penalty = 5;
+BoundingBox::BoundingBox(vector<Rectangle> recs, unsigned int totalArea) {
     this->rectangles = recs;
-    unsigned int area_sum = 0;
-    for (auto const &r: recs){
-        area_sum += r.getArea();
-    }
-    this->target_area = area_sum;
-}
-
-unsigned int BoundingBox::getPenalty() const {
-    return this->penalty;
+    this->targetArea = totalArea;
 }
 
 unsigned int BoundingBox::getTargetArea() const {
-    return this->target_area;
+    return this->targetArea;
 }
 
 unsigned int BoundingBox::getCurrentArea() const {
@@ -28,10 +19,6 @@ unsigned int BoundingBox::getCurrentArea() const {
 
 unsigned int BoundingBox::getFitness() const {
     return this->fitness;
-}
-
-void BoundingBox::setPenalty(unsigned int p) {
-    this->penalty = p;
 }
 
 void BoundingBox::calculateDimensions() {
@@ -76,7 +63,7 @@ unsigned int BoundingBox::overlap(const Rectangle& r1, const Rectangle& r2) {
     }
 }
 
-void BoundingBox::calculateFitness() {
+void BoundingBox::calculateFitness(unsigned int penalty) {
     unsigned int currentArea = this->getCurrentArea();
     unsigned int totalOverlappingArea = 0;
     int size = this->rectangles.size();
@@ -85,5 +72,5 @@ void BoundingBox::calculateFitness() {
             totalOverlappingArea += this->overlap(this->rectangles[i], this->rectangles[j]);
         }
     }
-    this->fitness = currentArea + this->penalty * totalOverlappingArea;
+    this->fitness = currentArea + penalty * totalOverlappingArea;
 }

@@ -9,9 +9,8 @@
 TEST(BBoxTest, Constructor) {
     vector<Rectangle> r1;
     r1.push_back(Rectangle(3,4));
-    BoundingBox b1(r1);
+    BoundingBox b1(r1, 12);
     EXPECT_EQ(b1.getTargetArea(), 12);
-    EXPECT_EQ(b1.getPenalty(), 5);
 }
 
 TEST(BBoxTest, ConstructorMultipleRectangles) {
@@ -24,9 +23,8 @@ TEST(BBoxTest, ConstructorMultipleRectangles) {
     r1.push_back(Rectangle(2,2));
     r1.push_back(Rectangle(4,3));
     r1.push_back(Rectangle(4,1));
-    BoundingBox b1(r1);
+    BoundingBox b1(r1, 100);
     EXPECT_EQ(b1.getTargetArea(), 100);
-    EXPECT_EQ(b1.getPenalty(), 5);
 }
 
 TEST(BBoxTest, calculateDimensionsSubOptimal) {
@@ -70,9 +68,15 @@ TEST(BBoxTest, calculateDimensionsSubOptimal) {
     r.push_back(r6);
     r.push_back(r7);
     r.push_back(r8);
-    BoundingBox b1(r);
+
+    unsigned int area = 0;
+        for(auto const &ele: r) {
+        area += ele.getArea();
+    }
+
+    BoundingBox b1(r, area);
     b1.calculateDimensions();
-    b1.calculateFitness();
+    b1.calculateFitness(5);
     EXPECT_EQ(b1.getCurrentArea(), 144);
     EXPECT_EQ(b1.getFitness(), 164);
 }
@@ -114,9 +118,15 @@ TEST(BBoxTest, calculateDimensionsOptimal) {
     r.push_back(r6);
     r.push_back(r7);
     r.push_back(r8);
-    BoundingBox b1(r);
+
+    unsigned int area = 0;
+    for(auto const &ele: r) {
+        area += ele.getArea();
+    }
+
+    BoundingBox b1(r, area);
     b1.calculateDimensions();
-    b1.calculateFitness();
+    b1.calculateFitness(5);
     EXPECT_EQ(b1.getTargetArea(), 100);
     EXPECT_EQ(b1.getFitness(), b1.getTargetArea());
     EXPECT_EQ(b1.getCurrentArea(), b1.getTargetArea());
