@@ -132,3 +132,56 @@ TEST(BBoxTest, calculateDimensionsOptimal) {
     EXPECT_EQ(b1.getCurrentArea(), b1.getTargetArea());
 
 }
+
+TEST(BBoxTest, calculateDimensionsOptimalShifted) {
+    vector<Rectangle> r;
+    Rectangle r1 = Rectangle(2,8);
+    Rectangle r2 = Rectangle(8,2);
+    Rectangle r3 = Rectangle(4,4);
+    Rectangle r4 = Rectangle(2,4);
+    Rectangle r5 = Rectangle(6,4);
+    Rectangle r6 = Rectangle(2,2);
+    Rectangle r7 = Rectangle(4,3);
+    Rectangle r8 = Rectangle(4,1);
+
+    r2.setOffsetY(8);
+
+    r3.setOffsetX(2);
+
+    r4.setOffsetX(2);
+    r4.setOffsetY(4);
+
+    r5.setOffsetX(4);
+    r5.setOffsetY(4);
+
+    r6.setOffsetX(8);
+    r6.setOffsetY(8);
+
+    r7.setOffsetX(6);
+
+    r8.setOffsetX(6);
+    r8.setOffsetY(3);
+
+    r.push_back(r1);
+    r.push_back(r2);
+    r.push_back(r3);
+    r.push_back(r4);
+    r.push_back(r5);
+    r.push_back(r6);
+    r.push_back(r7);
+    r.push_back(r8);
+
+    unsigned int area = 0;
+    for(auto &ele: r) {
+        area += ele.getArea();
+        ele.setOffsetX(ele.getOffsetX() + 2);
+        ele.setOffsetY(ele.getOffsetY() + 4);
+    }
+
+    BoundingBox b1(r, area);
+    b1.calculateDimensions();
+    b1.calculateFitness(5);
+    EXPECT_EQ(b1.getTargetArea(), 100);
+    EXPECT_EQ(b1.getFitness(), b1.getTargetArea());
+    EXPECT_EQ(b1.getCurrentArea(), b1.getTargetArea());
+}
