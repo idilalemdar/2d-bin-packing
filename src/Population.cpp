@@ -24,3 +24,17 @@ unsigned int Population::getPenalty() const {
 void Population::setPenalty(unsigned int p) {
     this->penalty = p;
 }
+
+unsigned int Population::getPopulationCount() const {
+    return this->population_count;
+}
+
+void Population::setGenePool(const vector<Rectangle>& recs) {
+    this->gene_pool = recs;
+}
+
+void Population::initializePopulation() {
+    // for i in range # of population count do:
+    // get some initial configuration of genes
+    // construct new BBox with this, push it to this->individuals
+}

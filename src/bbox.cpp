@@ -22,21 +22,31 @@ unsigned int BoundingBox::getFitness() const {
 }
 
 void BoundingBox::calculateDimensions() {
-    unsigned int maxX = 0;
-    unsigned int maxY = 0;
-    unsigned int currX, currY;
+    unsigned int maxDistanceX = 0;
+    unsigned int maxDistanceY = 0;
+    unsigned int minOffsetX = 2049;
+    unsigned int minOffsetY = 2049;
+    unsigned int currMaxX, currMaxY, currMinX, currMinY;
     for (auto const &r: this->rectangles) {
-        currX = r.getOffsetX() + r.getWidth();
-        currY = r.getOffsetY() + r.getHeight();
-        if (currX > maxX) {
-            maxX = currX;
+        currMinX = r.getOffsetX();
+        currMinY = r.getOffsetY();
+        currMaxX = currMinX + r.getWidth();
+        currMaxY = currMinY + r.getHeight();
+        if (currMaxX > maxDistanceX) {
+            maxDistanceX = currMaxX;
         }
-        if (currY > maxY) {
-            maxY = currY;
+        if (currMaxY > maxDistanceY) {
+            maxDistanceY = currMaxY;
+        }
+        if (currMinX < minOffsetX) {
+            minOffsetX = currMinX;
+        }
+        if (currMinY < minOffsetY) {
+            minOffsetY = currMinY;
         }
     }
-    this->width = maxX;
-    this->height = maxY;
+    this->width = maxDistanceX - minOffsetX;
+    this->height = maxDistanceY - minOffsetY;
 }
 
 unsigned int BoundingBox::overlap(const Rectangle& r1, const Rectangle& r2) {

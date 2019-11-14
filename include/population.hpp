@@ -13,9 +13,10 @@ class Population {
 public:
     static Population* getInstance();
     unsigned int getPopulationCount() const;
-    void setGenePool(vector<Rectangle>);
+    void setGenePool(const vector<Rectangle>&);
     unsigned int getPenalty() const;
     void setPenalty(unsigned int);
+    void initializePopulation();
 private:
     static Population* instance;
     Population();
