@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <utility>
+#include <algorithm>
 #include "rectangle.hpp"
 
 using namespace std;

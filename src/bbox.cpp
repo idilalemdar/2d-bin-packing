@@ -53,8 +53,27 @@ void BoundingBox::calculateDimensions() {
 }
 
 unsigned int BoundingBox::overlap(const Rectangle& r1, const Rectangle& r2) {
-    // TODO: Implement
-    return 0;
+    unsigned int r1_x = r1.getOffsetX();
+    unsigned int r1_y = r1.getOffsetY();
+    unsigned int r2_x = r2.getOffsetX();
+    unsigned int r2_y = r2.getOffsetY();
+
+    unsigned int r1_w = r1.getWidth();
+    unsigned int r1_h = r1.getHeight();
+    unsigned int r2_w = r2.getWidth();
+    unsigned int r2_h = r2.getHeight();
+
+    int r1beyondr2 = static_cast<int>(r1_x) - static_cast<int>(r2_w + r2_x);
+    int r2beyondr1 = static_cast<int>(r2_x) - static_cast<int>(r1_w + r1_x);
+    int r1above2 = static_cast<int>(r1_y) - static_cast<int>(r2_h + r2_y);
+    int r2abover1 = static_cast<int>(r2_y) - static_cast<int>(r1_h + r1_y);
+
+    if (r1beyondr2 >= 0 || r2beyondr1 >= 0 || r1above2 >= 0 || r2abover1 >= 0) {
+        return 0;
+    }
+    else {
+        return static_cast<unsigned int> (max(r1beyondr2, r2beyondr1) * max(r1above2, r2abover1));
+    }
 }
 
 void BoundingBox::calculateFitness() {

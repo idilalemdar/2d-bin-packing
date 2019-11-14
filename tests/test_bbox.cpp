@@ -45,7 +45,7 @@ TEST(BBoxTest, calculateDimensionsSubOptimal) {
     r2.setOffsetY(4);
 
     r3.setOffsetX(8);
-    r3.setOffsetX(7);
+    r3.setOffsetY(7);
 
     r4.setOffsetX(6);
     r4.setOffsetY(2);
@@ -56,7 +56,6 @@ TEST(BBoxTest, calculateDimensionsSubOptimal) {
     r6.setOffsetX(8);
     r6.setOffsetY(6);
 
-    r7.rotate();
     r7.setOffsetX(4);
 
     r8.rotate();
@@ -73,7 +72,9 @@ TEST(BBoxTest, calculateDimensionsSubOptimal) {
     r.push_back(r8);
     BoundingBox b1(r);
     b1.calculateDimensions();
+    b1.calculateFitness();
     EXPECT_EQ(b1.getCurrentArea(), 144);
+    EXPECT_EQ(b1.getFitness(), 164);
 }
 
 TEST(BBoxTest, calculateDimensionsOptimal) {
@@ -100,7 +101,6 @@ TEST(BBoxTest, calculateDimensionsOptimal) {
     r6.setOffsetX(8);
     r6.setOffsetY(8);
 
-    r7.rotate();
     r7.setOffsetX(6);
 
     r8.setOffsetX(6);
@@ -116,6 +116,9 @@ TEST(BBoxTest, calculateDimensionsOptimal) {
     r.push_back(r8);
     BoundingBox b1(r);
     b1.calculateDimensions();
+    b1.calculateFitness();
+    EXPECT_EQ(b1.getTargetArea(), 100);
+    EXPECT_EQ(b1.getFitness(), b1.getTargetArea());
     EXPECT_EQ(b1.getCurrentArea(), b1.getTargetArea());
 
 }
