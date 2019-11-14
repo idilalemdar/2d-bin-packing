@@ -10,15 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cb54de7-0d8d-4c43-abfa-2063759dd4a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/include/population.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Population.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_population.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/bbox.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/bbox.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bbox.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/bbox.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/population.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/population.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/population.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/population.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test" beforeDir="false" afterPath="$PROJECT_DIR$/test" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_bbox.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_bbox.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_population.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_population.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +108,7 @@
       <workItem from="1573312729138" duration="2723000" />
       <workItem from="1573406257224" duration="4015000" />
       <workItem from="1573642825644" duration="14204000" />
-      <workItem from="1573725007239" duration="6071000" />
+      <workItem from="1573725007239" duration="9613000" />
     </task>
     <servers />
   </component>

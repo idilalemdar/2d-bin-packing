@@ -38,3 +38,9 @@ void Population::initializePopulation() {
     // get some initial configuration of genes
     // construct new BBox with this, push it to this->individuals
 }
+
+vector<Rectangle> Population::initializeGenes() {
+    vector<Rectangles> copy_gene_pool(this->gene_pool);
+
+    return copy_gene_pool;
+}

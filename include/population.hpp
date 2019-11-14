@@ -24,6 +24,7 @@ private:
     vector<Rectangle> gene_pool;
     unsigned const int population_count = 50;
     unsigned int penalty;
+    vector<Rectangle> initializeGenes();
 };
 
 
