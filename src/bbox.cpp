@@ -21,6 +21,10 @@ unsigned int BoundingBox::getFitness() const {
     return this->fitness;
 }
 
+Rectangle& BoundingBox::getGene(unsigned int i) {
+    return this->rectangles[i];
+}
+
 void BoundingBox::calculateDimensions() {
     unsigned int maxDistanceX = 0;
     unsigned int maxDistanceY = 0;

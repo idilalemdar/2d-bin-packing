@@ -5,8 +5,15 @@
 #ifndef INC_2D_BIN_PACKING_RECTANGLE_H
 #define INC_2D_BIN_PACKING_RECTANGLE_H
 
+#include <random>
+#include <algorithm>
+#include <cmath>
+
+using namespace std;
+
 class Rectangle {
 private:
+    default_random_engine generator;
     unsigned int width;
     unsigned int height;
     unsigned int area;
@@ -24,6 +31,7 @@ public:
     void setOffsetX(unsigned int);
     void setOffsetY(unsigned int);
     bool isRotated() const;
+    void mutate(uniform_int_distribution<unsigned int>&);
 };
 
 #endif //INC_2D_BIN_PACKING_RECTANGLE_H

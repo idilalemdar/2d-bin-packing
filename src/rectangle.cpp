@@ -46,6 +46,14 @@ void Rectangle::rotate() {
     }
 }
 
+void Rectangle::mutate(uniform_int_distribution<unsigned int> &dist) {
+    unsigned int offset_x = dist(this->generator);
+    unsigned int offset_y = dist(this->generator);
+    this->setOffsetX(offset_x);
+    this->setOffsetY(offset_y);
+    this->rotate();
+}
+
 void Rectangle::setOffsetX(unsigned int ox) {
     this->offset_x = ox;
 }

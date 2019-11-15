@@ -18,6 +18,7 @@ public:
     unsigned int getTargetArea() const;
     unsigned int getCurrentArea() const;
     unsigned int getFitness() const;
+    Rectangle& getGene(unsigned int);
     void calculateDimensions();
     void calculateFitness(unsigned int);
 private:
