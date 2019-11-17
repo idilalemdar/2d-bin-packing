@@ -20,13 +20,6 @@ public:
     unsigned int getCurrentArea() const;
     unsigned int getFitness() const;
     Rectangle& getGene(unsigned int);
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-    void calculateDimensions();
->>>>>>> 8c5f838d1588112f04d135c76176c87e3fb7527d
     void calculateFitness(unsigned int);
 private:
     vector<Rectangle> rectangles;

@@ -8,13 +8,7 @@
 #include <random>
 #include <algorithm>
 #include <cmath>
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 #include <iostream>
-=======
->>>>>>> 8c5f838d1588112f04d135c76176c87e3fb7527d
->>>>>>> Stashed changes
 
 using namespace std;
 
@@ -40,15 +34,7 @@ public:
     void setOffsetX(unsigned int);
     void setOffsetY(unsigned int);
     bool isRotated() const;
-<<<<<<< Updated upstream
-    void mutate(uniform_int_distribution<unsigned int>&);
-=======
-<<<<<<< HEAD
     void mutate(unsigned int);
-=======
-    void mutate(uniform_int_distribution<unsigned int>&);
->>>>>>> 8c5f838d1588112f04d135c76176c87e3fb7527d
->>>>>>> Stashed changes
 };
 
 #endif //INC_2D_BIN_PACKING_RECTANGLE_H

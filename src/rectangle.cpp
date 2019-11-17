@@ -52,16 +52,8 @@ void Rectangle::rotate() {
     }
 }
 
-<<<<<<< Updated upstream
-void Rectangle::mutate(uniform_int_distribution<unsigned int> &dist) {
-=======
-<<<<<<< HEAD
 void Rectangle::mutate(unsigned int upper_bound) {
     uniform_int_distribution<unsigned int> dist(0, upper_bound);
-=======
-void Rectangle::mutate(uniform_int_distribution<unsigned int> &dist) {
->>>>>>> 8c5f838d1588112f04d135c76176c87e3fb7527d
->>>>>>> Stashed changes
     unsigned int offset_x = dist(this->generator);
     unsigned int offset_y = dist(this->generator);
     this->setOffsetX(offset_x);

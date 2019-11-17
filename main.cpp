@@ -1,16 +1,9 @@
 #include <string>
 #include <fstream>
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 #include "rectangle.hpp"
 #include "bbox.hpp"
 #include "population.hpp"
 #include "algorithm.hpp"
-=======
->>>>>>> 8c5f838d1588112f04d135c76176c87e3fb7527d
->>>>>>> Stashed changes
-
 using namespace std;
 
 int main(int argc, char** argv){
