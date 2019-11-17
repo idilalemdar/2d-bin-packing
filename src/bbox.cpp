@@ -78,6 +78,7 @@ unsigned int BoundingBox::overlap(const Rectangle& r1, const Rectangle& r2) {
 }
 
 void BoundingBox::calculateFitness(unsigned int penalty) {
+    this->calculateDimensions();
     unsigned int currentArea = this->getCurrentArea();
     unsigned int totalOverlappingArea = 0;
     int size = this->rectangles.size();

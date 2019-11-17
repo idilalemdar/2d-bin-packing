@@ -4,13 +4,15 @@
 
 #include "rectangle.hpp"
 
-Rectangle::Rectangle(unsigned int w, unsigned int h) {
+Rectangle::Rectangle(unsigned int w, unsigned int h, unsigned int i) {
     this->width = w;
     this->height = h;
     this->area = w * h;
     this->offset_x = 0;
     this->offset_y = 0;
     this->rotated = false;
+    this->id = i;
+
 }
 
 unsigned int Rectangle::getArea() const {
@@ -33,6 +35,10 @@ unsigned int Rectangle::getOffsetY() const {
     return this->offset_y;
 }
 
+unsigned int Rectangle::getID() const {
+    return this->id;
+}
+
 bool Rectangle::isRotated() const {
     return this->rotated;
 }
@@ -46,7 +52,16 @@ void Rectangle::rotate() {
     }
 }
 
+<<<<<<< Updated upstream
 void Rectangle::mutate(uniform_int_distribution<unsigned int> &dist) {
+=======
+<<<<<<< HEAD
+void Rectangle::mutate(unsigned int upper_bound) {
+    uniform_int_distribution<unsigned int> dist(0, upper_bound);
+=======
+void Rectangle::mutate(uniform_int_distribution<unsigned int> &dist) {
+>>>>>>> 8c5f838d1588112f04d135c76176c87e3fb7527d
+>>>>>>> Stashed changes
     unsigned int offset_x = dist(this->generator);
     unsigned int offset_y = dist(this->generator);
     this->setOffsetX(offset_x);

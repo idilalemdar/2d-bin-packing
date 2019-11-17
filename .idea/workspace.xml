@@ -10,6 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cb54de7-0d8d-4c43-abfa-2063759dd4a3" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+      <change afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
+=======
+>>>>>>> 8c5f838d1588112f04d135c76176c87e3fb7527d
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/bbox.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/bbox.hpp" afterDir="false" />
@@ -20,6 +27,13 @@
       <change beforePath="$PROJECT_DIR$/src/bbox.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/bbox.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/population.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/population.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rectangle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/rectangle.cpp" afterDir="false" />
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/tests/test_bbox.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_bbox.cpp" afterDir="false" />
+=======
+>>>>>>> 8c5f838d1588112f04d135c76176c87e3fb7527d
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/tests/test_population.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_population.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,12 +73,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/include" />
       <recent name="$PROJECT_DIR$/src" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -115,7 +129,17 @@
       <workItem from="1573642825644" duration="14204000" />
       <workItem from="1573725007239" duration="11190000" />
       <workItem from="1573751092350" duration="1659000" />
+<<<<<<< Updated upstream
       <workItem from="1573816846478" duration="19347000" />
+=======
+<<<<<<< HEAD
+      <workItem from="1573816846478" duration="20697000" />
+      <workItem from="1573891529803" duration="20826000" />
+      <workItem from="1573941070671" duration="3920000" />
+=======
+      <workItem from="1573816846478" duration="19347000" />
+>>>>>>> 8c5f838d1588112f04d135c76176c87e3fb7527d
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

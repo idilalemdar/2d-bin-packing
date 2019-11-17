@@ -75,7 +75,6 @@ TEST(BBoxTest, calculateDimensionsSubOptimal) {
     }
 
     BoundingBox b1(r, area);
-    b1.calculateDimensions();
     b1.calculateFitness(5);
     EXPECT_EQ(b1.getCurrentArea(), 144);
     EXPECT_EQ(b1.getFitness(), 164);
@@ -131,7 +130,6 @@ TEST(BBoxTest, calculateDimensionsSubOptimalShifted) {
     }
 
     BoundingBox b1(r, area);
-    b1.calculateDimensions();
     b1.calculateFitness(5);
     EXPECT_EQ(b1.getCurrentArea(), 144);
     EXPECT_EQ(b1.getFitness(), 164);
@@ -181,7 +179,6 @@ TEST(BBoxTest, calculateDimensionsOptimal) {
     }
 
     BoundingBox b1(r, area);
-    b1.calculateDimensions();
     b1.calculateFitness(5);
     EXPECT_EQ(b1.getTargetArea(), 100);
     EXPECT_EQ(b1.getFitness(), b1.getTargetArea());
@@ -235,7 +232,6 @@ TEST(BBoxTest, calculateDimensionsOptimalShifted) {
     }
 
     BoundingBox b1(r, area);
-    b1.calculateDimensions();
     b1.calculateFitness(5);
     EXPECT_EQ(b1.getTargetArea(), 100);
     EXPECT_EQ(b1.getFitness(), b1.getTargetArea());
