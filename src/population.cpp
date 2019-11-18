@@ -100,7 +100,6 @@ void Population::initializePopulation() {
     for (unsigned int i = 0; i < this->population_count; ++i) {
         BoundingBox bb(this->initializeGenes(), this->area);
         this->individuals.push_back(bb);
-        cout << bb.getTargetArea() << endl;
     }
 }
 
@@ -229,9 +228,7 @@ vector<BoundingBox> Population::uniform_crossover() {
 vector<Rectangle>& Population::initializeGenes() {
     vector<Rectangle> &copy_gene_pool(this->gene_pool);
     for (auto &ele: copy_gene_pool) {
-        cout << ele.getID() << " " << ele.getWidth() << " " << ele.getHeight() << " " << ele.getOffsetX() << " " << ele.getOffsetY() << endl;
         ele.mutate(this->upper_bound);
-        cout << ele.getID() << " " << ele.getWidth() << " " << ele.getHeight() << " " << ele.getOffsetX() << " " << ele.getOffsetY() << endl;
     }
     return copy_gene_pool;
 }

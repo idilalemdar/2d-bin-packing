@@ -1,3 +1,6 @@
 main
 test
+out.txt
 cmake-build-debug
+plot*
+report*

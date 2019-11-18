@@ -14,12 +14,12 @@ void Algorithm::incrementGeneration() {
     this->generation++;
 }
 
-void Algorithm::evolution() {
+void Algorithm::evolution(unsigned int iteration) {
     this->p.initializePopulation(); // set gene pool and determine heuristic beforehand
     this->p.calculateFitness();
     vector<BoundingBox> &parents = this->p.getCurrentPopulation();
     while (this->generation <= this->max_generation) {
-        this->report();
+        this->report(iteration);
         this->p.setMatingPool(this->roulette_wheel(parents, this->p.getTotalFitness()));
         this->p.shufflePopulation();
         this->p.setOffspring(this->p.crossover(this->xover_mode));
@@ -30,7 +30,6 @@ void Algorithm::evolution() {
 
         if (this->p.getBestIndividual().getFitness() == this->p.getTargetArea()) break;
     }
-    this->final_report();
 }
 
 vector<BoundingBox> Algorithm::survivors(vector<BoundingBox>& maters, vector<BoundingBox>& offsprings) {
@@ -72,26 +71,14 @@ vector<BoundingBox> Algorithm::roulette_wheel(vector<BoundingBox>& pop, double t
     return selections;
 }
 
-void Algorithm::report() {
+void Algorithm::report(unsigned int iteration) {
     ofstream ofs;
-    ofs.open("report.txt", ofstream::app);
+    ofs.open("report_" + to_string(this->xover_mode) + "_" + to_string(iteration) + ".txt", ofstream::app);
 
     ofs << "Generation:" << this->generation << " Average fitness:"
         << static_cast<double>(this->p.getTotalFitness()) / this->p.getPopulationCount()
         << " Best Fitness:" << this->p.getBestIndividual().getFitness() << endl;
 
-    ofs.close();
-}
-
-void Algorithm::final_report() {
-    ofstream ofs;
-    ofs.open("report.txt", ofstream::app);
-    BoundingBox &bb = this->p.getBestIndividual();
-    for (unsigned int i = 0; i < this->p.getGeneCount(); ++i) {
-        Rectangle &gene = bb.getGene(i);
-        ofs << gene.getID() << ": <" << gene.getOffsetX() << ", "
-            << gene.getOffsetY() << ", " << gene.isRotated() << ">" << endl;
-    }
     ofs.close();
 }
 

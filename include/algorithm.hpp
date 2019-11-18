@@ -12,7 +12,7 @@
 class Algorithm {
 public:
     Algorithm(Population&, XOVER_MODE, unsigned int);
-    void evolution();
+    void evolution(unsigned int);
 private:
     Population p;
     XOVER_MODE xover_mode;
@@ -23,8 +23,7 @@ private:
     vector<BoundingBox> roulette_wheel(vector<BoundingBox>&, double);
     vector<BoundingBox> survivors(vector<BoundingBox>&, vector<BoundingBox>&);
     void incrementGeneration();
-    void report();
-    void final_report();
+    void report(unsigned int);
     static bool sortFitnesses(BoundingBox&, BoundingBox&);
 };
 
